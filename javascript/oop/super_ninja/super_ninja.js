@@ -24,9 +24,9 @@ ninja1.showStats();
 ninja1.drinkSnake();
 
 
-class Sensie extends Ninja {
+class Sensei extends Ninja {
     constructor(){
-        super('sensie')
+        super('sensei')
         this.wisdom = 10;
     }
     speakWisdom() {
@@ -38,7 +38,7 @@ class Sensie extends Ninja {
     }
 }
 
-const sensie1 = new Sensie();
-sensie1.speakWisdom();
-sensie1.showWisdom();
-sensie1.sayName();
+const sensei1 = new Sensei();
+sensei1.speakWisdom();
+sensei1.showWisdom();
+sensei1.sayName();
