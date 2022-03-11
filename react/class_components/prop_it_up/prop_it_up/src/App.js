@@ -1,4 +1,4 @@
-import react from 'react';
+// import react from 'react';
 import './App.css';
 
 import PersonCard from './components/personCard'
