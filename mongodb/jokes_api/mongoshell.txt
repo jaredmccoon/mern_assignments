@@ -1,0 +1,23 @@
+npm init -y
+npm i express faker mongoose
+npm install 
+
+
+nodemon server.js 
+
+./mongo
+mongo
+mongosh
+
+
+show dbs
+show collections
+use icecream_db
+db.createCollection("")
+db."collection".insert({})
+db."collection".insertMany([{},{}])
+db."collection".find({ })
+db."collection".findOne({ })
+db."collection".updateMany({})
+db."collection".update({})
+db."collection".deleteMany({})
