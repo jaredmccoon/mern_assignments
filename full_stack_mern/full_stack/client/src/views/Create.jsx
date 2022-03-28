@@ -7,6 +7,7 @@ const Create = () => {
     const [price, setPrice] = useState(0)
     const [description, setDescrition] = useState("")
     const history = useHistory()
+    const [refresh, setRefresh] = useState(true)
 
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -23,8 +24,15 @@ const Create = () => {
         axios.get(`http://localhost:8000/api/projects`)
         .then(res=>setProjects(res.data))
         .catch(err=>console.log(err))
-    },[])
+    },[refresh])
 
+    const handleDelete = (deleteId) =>{
+        axios.delete(`http://localhost:8000/api/projects/${deleteId}`)
+        .then(res=>{
+            setRefresh(!refresh)
+        })
+        .catch(err=> console.log(err))
+    }
 
     return (  
         <>
@@ -71,6 +79,8 @@ const Create = () => {
                                     <td> <Link to={`/projects/${project._id}`}>{project.title}</Link></td>
                                     <td> {project.price}</td>
                                     <td>{project.description}</td>
+                                    <td><Link to={`/projects/${project._id}/edit`}>Edit</Link></td>
+                                    <td> <button onClick={()=>handleDelete(project._id)}>Delete</button></td>
                                 </tr>
                             ))
                     }
